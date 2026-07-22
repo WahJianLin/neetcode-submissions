@@ -1,0 +1,19 @@
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l=0
+        r=len(nums) - 1
+        
+        while l<=r:
+            m = (l+r)//2
+            val = nums[m]
+            print(l,m,r)
+            print(val)
+            print('___')
+            if val == target:
+                return m
+            if val < target:
+                l = m + 1
+            if target < val:
+                r = m - 1
+
+        return -1    
